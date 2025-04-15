@@ -16,7 +16,7 @@ export const Planet = (props) => {
                     <p className="card-text">"Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur."</p>
                     <div className="d-flex">
                         <Link to={`/planets/${props.uid}`} className="btn btn-primary">Learn more</Link>
-                        <span className="toggle mt-2 m-1" onClick={() => handleFavs()}><i class="fa-regular fa-heart fa-2xl" style={{ color: "#ef0658" }}></i></span>
+                        <span className="toggle mt-2 m-2" onClick={() => handleFavs()}><i class="fa-regular fa-heart fa-2xl" style={{ color: "#ef0658" }}></i></span>
                     </div>
                 </div>
             </div>
