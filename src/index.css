@@ -1,0 +1,22 @@
+body {
+    background-image: url(https://churchm.ag/wp-content/uploads/2018/04/star-wars-universe-image.jpg);
+}
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.scroller{
+  scrollbar-color: white black;
+}
+.toggle {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle.animate {
+  transform: scale(1.5);
+  color: red;
+}

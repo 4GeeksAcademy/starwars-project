@@ -12,7 +12,10 @@ export const initialStore=()=>{
         title: "Do my homework",
         background: null,
       }
-    ]
+    ], 
+    characters: [],
+    favorites: [],
+    planets: []
   }
 }
 
@@ -26,6 +29,34 @@ export default function storeReducer(store, action = {}) {
         ...store,
         todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
       };
+      case 'add_character':
+
+      return {
+        ...store,
+        characters: action.payload
+      };
+
+      case 'toggle_favorites':
+        let favs = store.favorites
+     if(favs.includes(action.payload)) {
+      favs = favs.filter((fav, index) => fav.name !== action.payload)
+     }
+     else {
+      favs=[...favs, action.payload]
+     }
+
+     return {
+      ...store,
+     favorites: favs
+    };
+
+    case 'add_planets':
+
+    return {
+      ...store,
+      planets: action.payload
+    };
+
     default:
       throw Error('Unknown action.');
   }    
