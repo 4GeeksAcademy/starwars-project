@@ -18,3 +18,12 @@ export const getPlanets = async(dispatch, payload) => {
     });
 }
 
+export const getStarships = async(dispatch, payload) => {
+    let response = await fetch("https://www.swapi.tech/api/starships")
+    let data = await response.json()
+
+    dispatch ({
+        type: "add_starships",
+        payload: data.results
+    });
+}

@@ -15,7 +15,8 @@ export const initialStore=()=>{
     ], 
     characters: [],
     favorites: [],
-    planets: []
+    planets: [],
+    starships: []
   }
 }
 
@@ -39,7 +40,7 @@ export default function storeReducer(store, action = {}) {
       case 'toggle_favorites':
         let favs = store.favorites
      if(favs.includes(action.payload)) {
-      favs = favs.filter((fav, index) => fav.name !== action.payload)
+      favs = favs.filter((fav, index) => fav !== action.payload)
      }
      else {
       favs=[...favs, action.payload]
@@ -55,6 +56,13 @@ export default function storeReducer(store, action = {}) {
     return {
       ...store,
       planets: action.payload
+    };
+
+    case 'add_starships':
+
+    return {
+      ...store,
+      starships: action.payload
     };
 
     default:
