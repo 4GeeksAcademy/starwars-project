@@ -26,7 +26,9 @@ export const Navbar = () => {
                                 {favorite}
                                 <button
                                     className="btn btn-sm btn-light ms-2 mt-1"
-                                    onClick={() => handleRemoveFavorite(favorite)}
+                                    onClick={(e) =>{
+										e.stopPropagation();
+										 handleRemoveFavorite(favorite)}}
                                 >
                                    <i class="fa-solid fa-trash"></i> 
                                 </button>
